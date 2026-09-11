@@ -13,13 +13,21 @@ public class PersonQueue
     /// <param name="person">The person to add</param>
     public void Enqueue(Person person)
     {
-        _queue.Insert(0, person);
+        // Add the new person to the back of the queue.
+        // Add() places the person at the end of the list,
+        // which follows FIFO (First In, First Out) behavior.
+        _queue.Add(person);
     }
 
     public Person Dequeue()
     {
+        // Get the person at the front of the queue.
         var person = _queue[0];
+
+        // Remove the person from the front of the queue.
         _queue.RemoveAt(0);
+
+        // Return the person that was removed.
         return person;
     }
 
